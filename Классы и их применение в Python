@@ -1,8 +1,9 @@
-animals = ["cow", "goose_gray", "goose_white", "sheep_barashek", "sheep_kudrjavy", "hen_koko", "hen_kykareky",
+animals = ["cow_manka", "goose_gray", "goose_white", "sheep_barashek", "sheep_kudrjavy", "hen_koko", "hen_kykareky",
 "goat_roga", "goat_koputa", "duck_krjkva"]
 
 
 class Cow:
+  name = "Manka"
   status = "hungry"
   color = "black"
   weight = 500    
@@ -12,29 +13,53 @@ class Goose:
   color = "black"
   weight = 5 
   
+  Goose_gray.name = "Gray"
+  Goose_white.name = "White"
+
 class Sheep:
+  name = "barashek"
   status = "hungry"
   color = "black"
   weight = 30 
+
+  Sheep_barashek.name = "Barashek"
+  Sheep_kudrjavy.name = "Kudrjavy"
 
 class Hen:
   status = "hungry"
   color = "black"
   weight = 2 
+  
+  hen_koko.name = "Koko"
+  hen_kykareky.name = "Kykareky"
 
 class Goat:
   status = "hungry"
   color = "black"
   weight = 20 
+  
+  goat_roga.name = "Roga"
+  goat_koputa.name = "Koputa"
 
 class Duck:
+  name = "Krjkva"
   status = "hungry"
   color = "black"
   weight = 3   
   
   
-  
     def feed(self):                       
       self.status = "well_fed"
   
-  
+    Cow.milk = "full"
+    Goat.milk = "full"
+    
+    Sheep.cut = "yes"
+    Goose.collect = "yes"
+    Hen.collect = "yes"
+    Duck.collect = "yes"
+    
+    
+    
+    
+    
