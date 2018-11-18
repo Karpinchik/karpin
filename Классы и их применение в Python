@@ -1,0 +1,40 @@
+animals = ["cow", "goose_gray", "goose_white", "sheep_barashek", "sheep_kudrjavy", "hen_koko", "hen_kykareky",
+"goat_roga", "goat_koputa", "duck_krjkva"]
+
+
+class Cow:
+  status = "hungry"
+  color = "black"
+  weight = 500    
+
+class Goose:
+  status = "hungry"
+  color = "black"
+  weight = 5 
+  
+class Sheep:
+  status = "hungry"
+  color = "black"
+  weight = 30 
+
+class Hen:
+  status = "hungry"
+  color = "black"
+  weight = 2 
+
+class Goat:
+  status = "hungry"
+  color = "black"
+  weight = 20 
+
+class Duck:
+  status = "hungry"
+  color = "black"
+  weight = 3   
+  
+  
+  
+    def feed(self):                       
+      self.status = "well_fed"
+  
+  
