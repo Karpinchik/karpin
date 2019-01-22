@@ -1,65 +1,67 @@
-animals = ["cow_manka", "goose_gray", "goose_white", "sheep_barashek", "sheep_kudrjavy", "hen_koko", "hen_kykareky",
-"goat_roga", "goat_koputa", "duck_krjkva"]
+class Animals:
+    name = "animal"
+    status = "hungry"
+
+    def __init__(self, name, weight):
+        self.name = name
+        self.weight = weight
+
+    def feed(self):                     # накормить
+        self.status = "full"
+
+class Ungulates(Animals):               # копытные
+    status_milk = "milk-on"                 # "milk-on" - пора доить; "milk-off" - доить не надо
+    ststus_cut = "cut_on"
+
+    def milk(self):                     # доить
+        self.status_milk = "milk-off"
+
+    def cut(self):                      # подстричь
+        self.ststus_cut = "cut_on"
+
+class Winged(Animals):                  # крылатые
+    status_eggs = "eggs-on"
+
+    def pick_eggs(self):               # собирать яйца
+        self.status_eggs = "eggs-off"
 
 
-class Cow:
-  name = "Manka"
-  status = "hungry"
-  color = "black"
-  weight = 500    
+cow = Ungulates("Манька", 500)
+Goose_gray = Winged("Серый", 4)
+Goose_white = Winged("Белый", 5)
+Sheep_barashek = Ungulates("Барашек", 30)
+Sheep_kudrjavy = Ungulates("Кудрявый", 35)
+hen_koko = Winged("Ко-Ко", 3)
+hen_kykareky = Winged("Кукареку", 3)
+goat_roga = Ungulates("Рога", 20)
+goat_koputa = Ungulates("Копыта", 25)
+Duck = Winged("Кряква", 2)
 
-class Goose:
-  status = "hungry"
-  color = "black"
-  weight = 5 
-  
-  Goose_gray.name = "Gray"
-  Goose_white.name = "White"
+cow.feed()
+cow.milk()
+goat_roga.feed()
+goat_roga.milk()
+goat_koputa.feed()
+goat_koputa.milk()
+Sheep_barashek.feed()
+Sheep_barashek.cut()
+Sheep_kudrjavy.feed()
+Sheep_kudrjavy.cut()
 
-class Sheep:
-  name = "barashek"
-  status = "hungry"
-  color = "black"
-  weight = 30 
+Goose_gray.feed()
+Goose_gray.pick_eggs()
+Goose_white.feed()
+Goose_white.pick_eggs()
+hen_koko.feed()
+hen_koko.pick_eggs()
+hen_kykareky.feed()
+hen_kykareky.pick_eggs()
+Duck.feed()
+Duck.pick_eggs()
 
-  Sheep_barashek.name = "Barashek"
-  Sheep_kudrjavy.name = "Kudrjavy"
-
-class Hen:
-  status = "hungry"
-  color = "black"
-  weight = 2 
-  
-  hen_koko.name = "Koko"
-  hen_kykareky.name = "Kykareky"
-
-class Goat:
-  status = "hungry"
-  color = "black"
-  weight = 20 
-  
-  goat_roga.name = "Roga"
-  goat_koputa.name = "Koputa"
-
-class Duck:
-  name = "Krjkva"
-  status = "hungry"
-  color = "black"
-  weight = 3   
-  
-  
-    def feed(self):                       
-      self.status = "well_fed"
-  
-    Cow.milk = "full"
-    Goat.milk = "full"
-    
-    Sheep.cut = "yes"
-    Goose.collect = "yes"
-    Hen.collect = "yes"
-    Duck.collect = "yes"
-    
-    
+def weighing():
+    print(Duck.weight + hen_kykareky.weight + hen_koko.weight + Goose_white.weight + Goose_gray.weight + Sheep_kudrjavy.weight + Sheep_barashek.weight + goat_koputa.weight + goat_roga.weight + cow.weight)
+weighing()
     
     
     
