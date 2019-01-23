@@ -59,8 +59,12 @@ hen_kykareky.pick_eggs()
 Duck.feed()
 Duck.pick_eggs()
 
+animals_list = [Duck.weight, hen_kykareky.weight, hen_koko.weight, Goose_white.weight, Goose_gray.weight,
+                Sheep_kudrjavy.weight, Sheep_barashek.weight, goat_koputa.weight, goat_roga.weight, cow.weight]
+
 def weighing():
-    print(Duck.weight + hen_kykareky.weight + hen_koko.weight + Goose_white.weight + Goose_gray.weight + Sheep_kudrjavy.weight + Sheep_barashek.weight + goat_koputa.weight + goat_roga.weight + cow.weight)
+    print(sum(animals_list))
+    print(max(animals_list))
 weighing()
     
     
