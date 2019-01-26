@@ -1,3 +1,44 @@
+# Задачи № 1, 2, 3.
+
+def addition():                                          # сложение
+    print(int(number[1]) + int(number[2]))
+
+def subtraction():                                       # вычитание
+    print(int(number[1]) - int(number[2]))
+
+def multiplication():                                    # умножение
+    print(int(number[1]) * int(number[2]))
+
+def division():                                          # деление
+    try:
+        print(int(number[1]) / int(number[2]))
+    except ZeroDivisionError:
+        print("Ошибка! Деление на 0.")
+    except ValueError:
+        print("Ошибка! Деление строк.")
+
+def arithmetic_operation():
+    assert len(number) == 3, "Неверное количество аргументов"
+    assert number[0] in ["+", "-", "*", "/"]
+    if number[0] == "+":
+        addition()
+    elif number[0] == "-":
+        subtraction()
+    elif number[0] == "*":
+        multiplication()
+    elif number[0] == "/":
+        division()
+    else:
+        print("Мы ограничены условием задания в выборе арифметических операций.")
+
+print("Программа принимает вводимые значения только однозначные числа. От 0 до 9!")
+number = list(input("Введите Польскую нотацию: "))
+arithmetic_operation()
+
+
+
+Задача № 4
+
 #  Каталог документов
 documents = [
     {"type": "passport", "number": "2207 876234", "name": "Василий Гупкин"},
