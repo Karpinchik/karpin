@@ -1,6 +1,4 @@
-class Animals:
-    name = "animal"
-    status = "hungry"
+class Animal:
 
     def __init__(self, name, weight):
         self.name = name
@@ -9,9 +7,8 @@ class Animals:
     def feed(self):                     # накормить
         self.status = "full"
 
-class Ungulates(Animals):               # копытные
-    status_milk = "milk-on"                 # "milk-on" - пора доить; "milk-off" - доить не надо
-    ststus_cut = "cut_on"
+
+class Hoofed(Animal):               # копытные
 
     def milk(self):                     # доить
         self.status_milk = "milk-off"
@@ -19,22 +16,22 @@ class Ungulates(Animals):               # копытные
     def cut(self):                      # подстричь
         self.ststus_cut = "cut_on"
 
-class Winged(Animals):                  # крылатые
-    status_eggs = "eggs-on"
+
+class Winged(Animal):                  # крылатые
 
     def pick_eggs(self):               # собирать яйца
         self.status_eggs = "eggs-off"
 
 
-cow = Ungulates("Манька", 500)
+cow = Hoofed("Манька", 500)
 Goose_gray = Winged("Серый", 4)
 Goose_white = Winged("Белый", 5)
-Sheep_barashek = Ungulates("Барашек", 30)
-Sheep_kudrjavy = Ungulates("Кудрявый", 35)
+Sheep_barashek = Hoofed("Барашек", 30)
+Sheep_kudrjavy = Hoofed("Кудрявый", 35)
 hen_koko = Winged("Ко-Ко", 3)
 hen_kykareky = Winged("Кукареку", 3)
-goat_roga = Ungulates("Рога", 20)
-goat_koputa = Ungulates("Копыта", 25)
+goat_roga = Hoofed("Рога", 20)
+goat_koputa = Hoofed("Копыта", 25)
 Duck = Winged("Кряква", 2)
 
 cow.feed()
@@ -62,9 +59,11 @@ Duck.pick_eggs()
 animals_list = [Duck.weight, hen_kykareky.weight, hen_koko.weight, Goose_white.weight, Goose_gray.weight,
                 Sheep_kudrjavy.weight, Sheep_barashek.weight, goat_koputa.weight, goat_roga.weight, cow.weight]
 
+
 def weighing():
     print(sum(animals_list))
     print(max(animals_list))
+    
 weighing()
     
     
