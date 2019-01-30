@@ -1,0 +1,73 @@
+салат
+3
+морковь | 2 | шт
+капуста | 1 | шт
+свекла | 1 | шт
+
+шаурма
+4
+лаваш | 1 | шт
+мясо | 100 | гр
+капуста | 100 | гр
+соус | 20 | гр
+
+кофе
+2
+вода | 50 | мл
+кофе | 20 | гр
+
+
+
+
+
+
+
+cook_book = {
+"салат": [
+    {"ingridient_name": "морковь", 'quantity': 3, 'measure': "шт."},
+    {"ingridient_name": "капуста", 'quantity': 1, 'measure': "шт."},
+    {"ingridient_name": "свекла", 'quantity': 1, 'measure': "шт."}
+],
+"шаурма": [
+    {"ingridient_name": "лаваш", 'quantity': 1, 'measure': "шт."},
+    {"ingridient_name": "мясо", 'quantity': 100, 'measure': "гр."},
+    {"ingridient_name": "капуста", 'quantity': 100, 'measure': "гр."},
+    {"ingridient_name": "соус", 'quantity': 20, 'measure': "гр."}
+],
+"кофе": [
+    {"ingridient_name": "вода", 'quantity': 50, 'measure': "мл"},
+    {"ingridient_name": "кофе", 'quantity': 20, 'measure': "гр"}
+]
+}
+
+
+
+def get_shop_list_by_dishes():
+    dict_keys = cook_book.keys()                    # через ключи выбираем все названия блюд из списка
+    print(dict_keys)                                # выводим на печать для выбора пользователем блюд
+    dish_1, dish_2 = input("Введите первое блюдо: "), input("Введите второе блюдо: ")               # просим пользователя ввести несколько блюд на выбор
+    dish_1, dish_2 = ["".join(dish_1)], ["".join(dish_2)]
+    dishes = (dish_1 + dish_2)                                                                      # собераем введенные блюда в список
+    person_count = int(input("Выберите количество персон: "))                                       # просим ввести количество персон
+    # print(dishes, person_count)
+
+    def output_result(a, b):                        # запускается функция которая пройдется по текстовому файлу и напечатает результат
+        # print("1234")
+        # print(dishes)
+        # print(person_count)
+        with open("menu.txt") as f:                  # открываем файл
+            for line in f:                           # итерируемся по всем линиям
+                line = name_dish                     # первая линия  - присваиваем в переменную название блюда
+                quantity = f.readline()              # вторая линия - присваиваем в переменную количество ингридиентов
+        # дальше совсем не понимаю как реализавать
+        # Предпологаю что нужно прочитать строки с ингридиентами с помощью quantity (количество ингридиентов)
+        # пройти по пустой строке и снова на цикл.
+        # дальше совсем не понятно, из списка или из файла нужно брать данные для вывода.
+        #
+
+
+        f.close()
+
+    output_result(dishes, person_count)
+
+get_shop_list_by_dishes()
