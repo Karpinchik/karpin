@@ -1,1 +1,29 @@
-# karpin
+import json
+from pprint import pprint
+
+with open("newsafr.json", encoding="utf-8") as f:
+  json_data = json.load(f)
+  pprint(json_data)
+
+  # def top_ten():
+  #   определение 10 самых часто встречающихся в новостях слов длиннее 6 символов
+  #   pass
+
+
+
+import xml.etree.ElementTree as ET
+data = ET.parse("newsafr.xml")
+
+root = data.getroot()
+# print(root.attrib)
+
+title = root.find("channel/title")
+# print(title.attrib)
+
+xml_items = root.findall("channel/item")
+# print(xml_items)
+for item in xml_items:
+  # print(item.attrib["id"])
+  news = (item.find("description").text)
+  print(news)
+
