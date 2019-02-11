@@ -1,29 +1,30 @@
+# Задание 1
 import json
 from pprint import pprint
 
-with open("newsafr.json", encoding="utf-8") as f:
-  json_data = json.load(f)
-  pprint(json_data)
+with open("newsafr.json", encoding="utf-8") as datafile:
+    json_data = json.load(datafile)
 
-  # def top_ten():
-  #   определение 10 самых часто встречающихся в новостях слов длиннее 6 символов
-  #   pass
+list_news = []
+with open("data_json_9.json", "w", encoding="utf-8") as datafile:
+    json.dump(json_data["rss"]["channel"]["items"], datafile, ensure_ascii=False, indent=2)
 
+words = ""
 
+with open("data_json_9.json", encoding="utf-8") as datafile:
+    news = json.load(datafile)
+    for i in news:
+        descrip = (i["description"])
+        words += descrip
 
-import xml.etree.ElementTree as ET
-data = ET.parse("newsafr.xml")
+word_list = words.split(" ")
+six_in_word = []
 
-root = data.getroot()
-# print(root.attrib)
+for s in word_list:
+    if len(s) > 6:
+        six_in_word.append(s)
 
-title = root.find("channel/title")
-# print(title.attrib)
+six_in_word = sorted(six_in_word, key=len)
+pprint(six_in_word[-11:-1])
 
-xml_items = root.findall("channel/item")
-# print(xml_items)
-for item in xml_items:
-  # print(item.attrib["id"])
-  news = (item.find("description").text)
-  print(news)
-
+# Задание 2
