@@ -1,4 +1,4 @@
-# Задание 1
+
 import json
 from pprint import pprint
 
@@ -25,7 +25,14 @@ for s in word_list:
         six_in_word.append(s)
 
 six_in_word = sorted(six_in_word, key=len)
-pprint(six_in_word[-11:-1])
+six_in_word.reverse()
+
+count = []
+for d in six_in_word:
+    if d not in count:
+        count.append(d)
+pprint(count[:10])
+
 
 # Задание 2
 from pprint import pprint
@@ -50,4 +57,11 @@ for s in word_list:
         six_in_word.append(s)
 
 six_in_word = sorted(six_in_word, key=len)
-pprint(six_in_word[-11:-1])
+six_in_word.reverse()
+
+count = []
+for d in six_in_word:
+    if d not in count:
+        count.append(d)
+pprint(count[:10])
+
