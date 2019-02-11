@@ -28,3 +28,26 @@ six_in_word = sorted(six_in_word, key=len)
 pprint(six_in_word[-11:-1])
 
 # Задание 2
+from pprint import pprint
+import xml.etree.ElementTree as ET
+
+tree = ET.parse("newsafr.xml")
+root = tree.getroot()
+
+words = ""
+
+data_diskrip = root.findall("channel/item/description")
+
+for i in data_diskrip:
+    a = i.text
+    words += a
+
+word_list = words.split(" ")
+six_in_word = []
+
+for s in word_list:
+    if len(s) > 6:
+        six_in_word.append(s)
+
+six_in_word = sorted(six_in_word, key=len)
+pprint(six_in_word[-11:-1])
