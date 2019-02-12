@@ -26,12 +26,7 @@ for s in word_list:
 
 six_in_word = sorted(six_in_word, key=len)
 six_in_word.reverse()
-
-count = []
-for d in six_in_word:
-    if d not in count:
-        count.append(d)
-pprint(count[:10])
+pprint(six_in_word)
 
 
 # Задание 2
@@ -58,10 +53,4 @@ for s in word_list:
 
 six_in_word = sorted(six_in_word, key=len)
 six_in_word.reverse()
-
-count = []
-for d in six_in_word:
-    if d not in count:
-        count.append(d)
-pprint(count[:10])
-
+pprint(six_in_word)
