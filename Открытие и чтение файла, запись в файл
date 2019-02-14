@@ -1,3 +1,24 @@
+# содержимое текстового файла data_lesson_1.txt
+салат
+3
+морковь | 2 | шт
+капуста | 1 | шт
+свекла | 1 | шт
+
+шаурма
+4
+лаваш | 1 | шт
+мясо | 100 | гр
+капуста | 100 | гр
+соус | 20 | гр
+
+кофе
+2
+вода | 50 | мл
+кофе | 20 | гр
+
+# решение задания
+
 from pprint import pprint
 
 cook_book = {}
@@ -17,7 +38,9 @@ def cook():
                 list_1.append(dict)
             cook_book[name] = list_1
             f.readline()
+    # pprint(cook_book)
 
+# def dishes_person_input():
 dish_1, dish_2 = input("Введите первое блюдо: "), input("Введите второе блюдо: ")
 dish_1, dish_2 = ["".join(dish_1)], ["".join(dish_2)]
 dishes = (dish_1 + dish_2)
