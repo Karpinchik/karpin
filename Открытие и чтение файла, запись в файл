@@ -21,8 +21,8 @@
 
 from pprint import pprint
 
-cook_book = {}
 def cook():
+    cook_book = {}
     with open('data_lesson_1.txt', encoding="utf-8") as f:
         for line in f:
             list_1 = []
@@ -38,26 +38,26 @@ def cook():
                 list_1.append(dict)
             cook_book[name] = list_1
             f.readline()
-    # pprint(cook_book)
 
-# def dishes_person_input():
-dish_1, dish_2 = input("Введите первое блюдо: "), input("Введите второе блюдо: ")
-dish_1, dish_2 = ["".join(dish_1)], ["".join(dish_2)]
-dishes = (dish_1 + dish_2)
-person_count = int(input("Введите количество персон: "))
+    def dishes_person_input():
+        dish_1, dish_2 = input("Введите первое блюдо: "), input("Введите второе блюдо: ")
+        dish_1, dish_2 = ["".join(dish_1)], ["".join(dish_2)]
+        dishes = (dish_1 + dish_2)
+        person_count = int(input("Введите количество персон: "))
+        menu_ing_dict = {}
 
-menu_ing_dict = {}
-def get_shop_list_by_dishes(dishes, person_count):
-    for menu_list in dishes:
-        if menu_list in cook_book:
-            ingredients_for_menu = cook_book[menu_list]
-            for ingredients_for_menu_str in ingredients_for_menu:
-                ifms_in = ingredients_for_menu_str["ingridient_name"]
-                ifms_q = ingredients_for_menu_str["quantity"]
-                ifms_m = ingredients_for_menu_str["measure"]
-                ing_weight = {"measure": ifms_m, "quantity": int(ifms_q) * person_count}
-                menu_ing_dict[ifms_in] = ing_weight
-    pprint(menu_ing_dict)
+        def get_shop_list_by_dishes():
+            for menu_list in dishes:
+                if menu_list in cook_book:
+                    ingredients_for_menu = cook_book[menu_list]
+                    for ingredients_for_menu_str in ingredients_for_menu:
+                        ifms_in = ingredients_for_menu_str["ingridient_name"]
+                        ifms_q = ingredients_for_menu_str["quantity"]
+                        ifms_m = ingredients_for_menu_str["measure"]
+                        ing_weight = {"measure": ifms_m, "quantity": int(ifms_q) * person_count}
+                        menu_ing_dict[ifms_in] = ing_weight
+            pprint(menu_ing_dict)
+        get_shop_list_by_dishes()
+    dishes_person_input()
 
 cook()
-get_shop_list_by_dishes(dishes, person_count)
